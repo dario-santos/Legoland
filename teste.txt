@@ -1,0 +1,5 @@
+linha 1
+linha 2
+
+depois de um espaco
+fim

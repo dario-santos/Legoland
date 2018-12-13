@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1544480217 source:c:\users\dario\onedrive\ambiente de trabalho\legoland\source.c
+	<stdio.h>
+	<stdlib.h>
+	"pixel.h"
+
+1544642010 c:\users\dario\onedrive\ambiente de trabalho\legoland\pixel.h
+	<stdlib.h>
+
+1544641977 source:c:\users\dario\onedrive\ambiente de trabalho\legoland\pixel.c
+	"pixel.h"
+
+1544645150 source:c:\users\dario\onedrive\ambiente de trabalho\legoland\menu.c
+	"menu.h"
+
+1544641943 c:\users\dario\onedrive\ambiente de trabalho\legoland\menu.h
+	"pixel.h"
+	"pesquisa.h"
+	"ler.h"
+
+1544642720 c:\users\dario\onedrive\ambiente de trabalho\legoland\pesquisa.h
+	<stdio.h>
+	"pixel.h"
+
+1544645110 source:c:\users\dario\onedrive\ambiente de trabalho\legoland\pesquisar.c
+	"pesquisa.h"
+
+1544645075 source:c:\users\dario\onedrive\ambiente de trabalho\legoland\ler.c
+	"ler.h"
+
+1544641906 c:\users\dario\onedrive\ambiente de trabalho\legoland\ler.h
+	<stdlib.h>
+	<stdio.h>
+	"pixel.h"
+

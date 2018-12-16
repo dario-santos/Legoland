@@ -1,6 +1,6 @@
 #include "menu.h"
 
-int menu()
+int show_menu()
 {
     int escolhido = 0;
     printf("1 - Carregar ficheiro\n");
@@ -17,10 +17,11 @@ int menu()
 void handle_menu()
 {
     Pixel** L = NULL;
+
     int escolhido = 0;
     do{
 
-        escolhido = menu();
+        escolhido = show_menu();
         switch(escolhido)
         {
             case 0:
@@ -31,7 +32,7 @@ void handle_menu()
                 break;
 
             case 2:
-                pesquisar(L,100,0,0,10);
+                seach_submenu(L);
                 break;
 
             default:
@@ -55,5 +56,21 @@ Pixel** read_submenu()
     }while(index <= 0);
 
     return ler_ficheiro(index);
+}
+
+void seach_submenu(Pixel** L)
+{
+    int r,g,b,d;
+    printf("Vai inserir a cor em RGB agora\n");
+    printf("R:");
+    scanf("%d", &r);
+    printf("\nG:");
+    scanf("%d", &g);
+    printf("\nB:");
+    scanf("%d", &b);
+    printf("\nTolerancia:");
+    scanf("%d", &d);
+
+    pesquisar(L, r, g, b, d);
 }
 

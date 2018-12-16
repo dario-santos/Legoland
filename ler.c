@@ -8,6 +8,7 @@ Pixel** ler_ficheiro(int index)
     int i = 0, j = 0;
     int n = 0;
     Pixel** L = NULL;
+
     FILE* f = fopen("imgs.txt", "r");
     if(f == NULL)
     {
@@ -25,7 +26,6 @@ Pixel** ler_ficheiro(int index)
         if(n == index && c[0] == 'I')
         {
             fscanf(f,"%d %d %d", &lin, &col, &canais);
-            printf("%d %d %d\n", lin, col, canais);
             L = make_lines(lin);
             for(i = 0 ; i < lin ; i++)
             {

@@ -1,11 +1,11 @@
 #include "pixel.h"
 
-Pixel** make_lines(int n)
+Pixel* *make_vector(int n)
 {
     Pixel* *L = (Pixel**) malloc(n * sizeof(Pixel*));
 
     int i = 0;
-    for(i = 0 ; i < n  ; i++)
+    for(i = 0 ; i < n ; i++)
         L[i] = NULL;
 
     return L;
@@ -13,7 +13,7 @@ Pixel** make_lines(int n)
 
 Pixel* make_pixel(int column, int r, int g, int b)
 {
-    Pixel* aux = (Pixel*) malloc(sizeof(Pixel));
+    Pixel *aux = (Pixel*) malloc(sizeof(Pixel));
     aux->column = column;
     aux->r = r;
     aux->g = g;
@@ -25,18 +25,18 @@ Pixel* make_pixel(int column, int r, int g, int b)
     return aux;
 }
 
-Pixel* insert_pixel(Pixel* L, Pixel* np)
+Pixel* insert_last(Pixel *L, Pixel *new_pixel)
 {
-    Pixel* aux = L;
+    Pixel *aux = L;
     if(L == NULL)
-        return np;
+        return new_pixel;
 
     while(aux != NULL)
     {
         if(aux->pnext == NULL)
         {
-            aux->pnext = np;
-            np->pprev = aux;
+            aux->pnext = new_pixel;
+            new_pixel->pprev = aux;
             break;
         }
         aux = aux->pnext;
@@ -44,7 +44,7 @@ Pixel* insert_pixel(Pixel* L, Pixel* np)
     return L;
 }
 
-void free_list(Pixel* L)
+void free_list(Pixel *L)
 {
     if(L == NULL)
         return;

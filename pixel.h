@@ -1,5 +1,6 @@
 #ifndef PIXEL_H
 #define PIXEL_H
+
 #include <stdlib.h>
 
 typedef struct PIXEL
@@ -7,17 +8,47 @@ typedef struct PIXEL
     int column;
     int r, g, b;
 
-    struct PIXEL* pnext;
-    struct PIXEL* pprev;
+    struct PIXEL *pnext;
+    struct PIXEL *pprev;
 
-} Pixel;
+}Pixel;
 
-Pixel** make_lines(int n);
+/*
+ * Função make_vector(int n)
+ * ----------------------------
+ *   n: nº de elementos do vetor
+ *
+ *   retorno: vetor com n elementos
+ */
+Pixel* *make_vector(int n);
 
+/*
+ * Função make_pixel(int column, int r, int g, int b)
+ * ----------------------------
+ *   column: coluna do pixel
+ *   r: codigo do vermelho do pixel
+ *   g: codigo do verde do pixel
+ *   b: codigo do azul do pixel
+ *
+ *   retorno: pixel com os atributos de entrada
+ */
 Pixel* make_pixel(int column, int r, int g, int b);
 
-Pixel* insert_pixel(Pixel* L, Pixel* np);
+/*
+ * Função insert_last(Pixel *L, Pixel *new_pixel)
+ * ----------------------------
+ *   L: Lista a introduzir o pixel
+ *   new_pixel: pixel para introduzir na lista
+ *
+ *   retorno: lista com o pixel adicionado
+ */
+Pixel* insert_last(Pixel *L, Pixel *new_pixel);
 
-void free_list(Pixel* L);
+/*
+ * Função free_list(Pixel *L)
+ * ----------------------------
+ *   L: Lista para libertar
+ */
+void free_list(Pixel *L);
 
 #endif /*PIXEL_H*/

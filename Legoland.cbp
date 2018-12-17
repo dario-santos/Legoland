@@ -50,6 +50,10 @@
 		<Unit filename="source.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="zone.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="zone.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />

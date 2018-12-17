@@ -16,13 +16,11 @@ int show_menu()
 
 void handle_menu()
 {
-    Pixel** L = NULL;
-
-    int escolhido = 0;
+    Pixel* *L = NULL;
+    int input = 0;
     do{
-
-        escolhido = show_menu();
-        switch(escolhido)
+        input = show_menu();
+        switch(input)
         {
             case 0:
                 break;
@@ -32,45 +30,55 @@ void handle_menu()
                 break;
 
             case 2:
-                seach_submenu(L);
+                search_submenu(L);
                 break;
 
             default:
-                printf("\n\nErro: opcao invalida, escolha de novo\n\n");
+                printf("\n\nErro: opcao invalida, introduza uma opcao valida\n\n");
                 break;
         }
 
-    }while(escolhido != 0);
+    }while(input != 0);
     //Limpar cada um dos elementos de L;
 }
 
-Pixel** read_submenu()
+Pixel* *read_submenu()
 {
     int index = 0;
     do{
-        printf("\nInsira a imagem que quer do ficheiro (1 -> primeira imagem, 2 -> segunda ect.)\n");
+        printf("\nInsira o index da imagem a carregar do ficheiro (1 -> primeira imagem, 2 -> segunda, 3 -> terceira)\n");
         printf("Inserido: ");
 
         scanf("%d", &index);
+    }while(index <= 0 || index > 3);
 
-    }while(index <= 0);
-
-    return ler_ficheiro(index);
+    return read_file(index);
 }
 
-void seach_submenu(Pixel** L)
+void search_submenu(Pixel* *L)
 {
-    int r,g,b,d;
-    printf("Vai inserir a cor em RGB agora\n");
-    printf("R:");
-    scanf("%d", &r);
-    printf("\nG:");
-    scanf("%d", &g);
-    printf("\nB:");
-    scanf("%d", &b);
-    printf("\nTolerancia:");
-    scanf("%d", &d);
+    int r, g, b, d;
+    printf("Vai inserir a cor a procurar no formato RGB agora\n");
+    do{
+        printf("R:");
+        scanf("%d", &r);
+    }while(r < 0 || r > 255);
+    do{
+        printf("G:");
+        scanf("%d", &g);
+    }while(g < 0 || g > 255);
+    do{
+        printf("B:");
+        scanf("%d", &b);
+    }while(b < 0 || b > 255);
+    do{
+        printf("Tolerancia:");
+        scanf("%d", &d);
+    }while(d < 0 || d > 255);
 
-    pesquisar(L, r, g, b, d);
+    Zone *Z = search_zones(L, r, g, b, d);
+
+    print_zones(Z);
+
 }
 

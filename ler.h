@@ -1,16 +1,17 @@
 #ifndef LER_H
 #define LER_H
+
 #include <stdlib.h>
 #include <stdio.h>
 #include "pixel.h"
 
 /*
- * Função ler_ficheiro
+ * Função read_file(int index)
  * ----------------------------
- *   index: número inteiro que simboliza a imagem que queremos
+ *   index: numero inteiro que simboliza a imagem que queremos carregar do ficheiro
  *
- *   retorno: endereço de memória do vetor com as linhas da imagem
+ *   retorno: vetor de listas com a imagem escolhida
  */
-Pixel** ler_ficheiro(int index);
+Pixel* *read_file(int index);
 
 #endif /*LER_H*/

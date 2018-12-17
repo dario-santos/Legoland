@@ -75,10 +75,19 @@ Zone* insert_order(Zone *Z, Zone *new_zone)
 void print_zones(Zone *Z)
 {
     Zone *aux = Z;
-
+    int count = 0;
     while(aux != NULL)
     {
+        if(count % 20 == 0 && count != 0)
+        {
+            fflush(stdin);
+            printf("Insira uma tecla para mostrar mais valores\n");
+            getchar();
+        }
+
         printf("C(%d,%d) = %d\n", aux->c, aux->r, aux->sz);
         aux = aux->pnext;
+
+        count++;
     }
 }

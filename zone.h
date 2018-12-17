@@ -18,5 +18,8 @@ Zone* make_zone(int c, int r, int sz);
 
 Zone* insert_order(Zone *Z, Zone *new_zone);
 
+void print_zones(Zone* Z);
+
 void free_zones(Zone *Z);
+
 #endif /*ZONE_H*/

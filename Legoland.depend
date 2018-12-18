@@ -44,7 +44,7 @@
 1545011789 c:\users\dario\onedrive\documentos\github\legoland\pixel.h
 	<stdlib.h>
 
-1545081762 source:c:\users\dario\onedrive\documentos\github\legoland\pesquisar.c
+1545087841 source:c:\users\dario\onedrive\documentos\github\legoland\pesquisar.c
 	"pesquisa.h"
 
 1545064954 c:\users\dario\onedrive\documentos\github\legoland\pesquisa.h
@@ -54,15 +54,14 @@
 	"pixel.h"
 	"zone.h"
 
-1545011933 source:c:\users\dario\onedrive\documentos\github\legoland\pixel.c
+1545089405 source:c:\users\dario\onedrive\documentos\github\legoland\pixel.c
 	"pixel.h"
 
-1545081013 source:c:\users\dario\onedrive\documentos\github\legoland\source.c
+1545083744 source:c:\users\dario\onedrive\documentos\github\legoland\source.c
 	<stdio.h>
 	"menu.h"
-	"zone.h"
 
-1545081081 source:c:\users\dario\onedrive\documentos\github\legoland\menu.c
+1545092122 source:c:\users\dario\onedrive\documentos\github\legoland\menu.c
 	"menu.h"
 
 1545064939 c:\users\dario\onedrive\documentos\github\legoland\menu.h
@@ -76,6 +75,6 @@
 	<stdlib.h>
 	<stdio.h>
 
-1545083605 source:c:\users\dario\onedrive\documentos\github\legoland\zone.c
+1545092317 source:c:\users\dario\onedrive\documentos\github\legoland\zone.c
 	"zone.h"
 

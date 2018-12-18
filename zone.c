@@ -78,7 +78,8 @@ void print_zones(Zone *Z)
     int count = 0;
     while(aux != NULL)
     {
-        if(count % 20 == 0 && count != 0)
+        //Mostrar 20 zonas de cada vez
+        if(count % 20 == 0 && count != 0 && aux->pnext != NULL)
         {
             fflush(stdin);
             printf("Insira uma tecla para mostrar mais valores\n");
@@ -89,5 +90,23 @@ void print_zones(Zone *Z)
         aux = aux->pnext;
 
         count++;
+    }
+}
+
+void free_zones(Zone *Z)
+{
+    if(Z == NULL)
+        return;
+
+    while(Z != NULL)
+    {
+        if(Z->pprev != NULL)
+            free(Z->pprev);
+        if(Z->pnext == NULL)
+        {
+            free(Z);
+            return;
+        }
+        Z = Z->pnext;
     }
 }

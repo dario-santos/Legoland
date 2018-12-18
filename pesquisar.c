@@ -21,7 +21,7 @@ Zone* search_zones(Pixel* *L, int r, int g, int b, int d)
     if(L == NULL)
     {
         printf("A imagem esta nula");
-        return;
+        return NULL;
     }
 
     int* *vistidados = (int**) malloc(1080 * sizeof(int*));

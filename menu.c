@@ -23,9 +23,11 @@ void handle_menu()
         switch(input)
         {
             case 0:
+                free_image(L);
                 break;
 
             case 1:
+                free_image(L);
                 L = read_submenu();
                 break;
 
@@ -79,6 +81,18 @@ void search_submenu(Pixel* *L)
     Zone *Z = search_zones(L, r, g, b, d);
 
     print_zones(Z);
+    if(Z != NULL)
+        free_zones(Z);
 
 }
 
+void free_image(Pixel* *L)
+{
+    if(L != NULL)
+    {
+        int i = 0;
+        for(i = 1079 ; i >= 0 ; i--)
+            free_list(L[i]);
+        free(L);
+    }
+}

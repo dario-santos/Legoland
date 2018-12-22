@@ -42,7 +42,7 @@ void search_menu()
 
     search_input(&r, &g, &b, &d);
 
-    F = open_file("teste.txt");
+    F = open_file("imgs.txt");
 
     do{
         L = read_file(F, &lin, &col);
@@ -55,8 +55,7 @@ void search_menu()
             free_zones(Z);
         }
 
-        if(L != NULL)
-            free_image(L, lin);
+        free_image(L, lin);
 
         i++;
     }while(L != NULL);

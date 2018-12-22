@@ -19,7 +19,6 @@ Zone* insert_order(Zone *Z, Zone *new_zone)
 {
     Zone *aux = Z;
 
-    //procuramos a posicao em que vamos colocar o elemento
     while(aux != NULL)
     {
         if(aux->sz < new_zone->sz)
@@ -75,11 +74,12 @@ Zone* insert_zone_first(Zone *Z, Zone *new_zone)
 void print_zones(Zone *Z)
 {
     Zone *aux = Z;
+
     int count = 0;
     while(aux != NULL)
     {
-        //Mostrar 20 zonas de cada vez
-        if(count % 20 == 0 && count != 0 && aux->pnext != NULL)
+        //Mostrar 30 elementos de cada vez
+        if(count % 30 == 0 && count != 0 && aux->pnext != NULL)
         {
             fflush(stdin);
             printf("Insira uma tecla para mostrar mais valores\n");

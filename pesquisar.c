@@ -1,14 +1,17 @@
 #include "pesquisa.h"
 
 int R = 0, G = 0, B = 0, D = 0;
+int LIN = 0, COL = 0;
 int X_MAX = 0, X_MIN = 0, Y_MAX = 0, Y_MIN = 0;
 
-Zone* search_zones(Pixel* *L, int r, int g, int b, int d)
+Zone* search_zones(Pixel* *L, int lin, int col, int r, int g, int b, int d)
 {
     R = r;
     G = g;
     B = b;
     D = d;
+    LIN = lin;
+    COL = col;
 
     Zone *Z = NULL;
     Pixel *aux = NULL;
@@ -19,14 +22,14 @@ Zone* search_zones(Pixel* *L, int r, int g, int b, int d)
     if(L == NULL)
         return NULL;
 
-    int* *visitados = (int**) malloc(1080 * sizeof(int*));
-    for(int i = 0 ; i < 1080 ; i++)
-        visitados[i] = (int*) calloc(1920, sizeof(int));
+    int* *visitados = (int**) malloc(LIN * sizeof(int*));
+    for(int i = 0 ; i < LIN ; i++)
+        visitados[i] = (int*) calloc(COL, sizeof(int));
 
-    for(i = 0 ; i < 1080 ; i++)
+    for(i = 0 ; i < LIN ; i++)
     {
         aux = L[i];
-        for(j = 0 ; j < 1920 ; j++)
+        for(j = 0 ; j < COL ; j++)
         {
             if(in_interval(aux) && visitados[i][j] == 0)
             {
@@ -52,7 +55,7 @@ Zone* search_zones(Pixel* *L, int r, int g, int b, int d)
         }
     }
 
-    for(int i = 0 ; i < 1080 ; i++)
+    for(int i = 0 ; i < LIN ; i++)
         free(visitados[i]);
     free(visitados);
 
@@ -106,9 +109,9 @@ int recursive_search(Pixel* *L, int i, int j, int** V)
 
 int in_limits(int i, int j)
 {
-    if(!(i >= 0 && i < 1080))
+    if(!(i >= 0 && i < LIN))
         return 0;
-    if(!(j >= 0 && j < 1920))
+    if(!(j >= 0 && j < COL))
         return 0;
     return 1;
 }

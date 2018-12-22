@@ -21,10 +21,10 @@ void close_file(FILE *F)
         free(F);
 }
 
-Pixel** read_file(FILE* F)
+Pixel** read_file(FILE* F, int *lin, int *col)
 {
     char c[50];
-    int lin, col, canais;
+    int canais;
     int r = 0, g = 0, b = 0;
     int i = 0, j = 0;
     Pixel* *L = NULL;
@@ -33,18 +33,18 @@ Pixel** read_file(FILE* F)
         return NULL;
 
     while(fgets(c, 50, (FILE*) F))
-        if(c[0] == 'I')
+        if(strstr(c, ".jpg") != NULL || strstr(c, ".jpeg") != NULL || strstr(c, ".png") != NULL)
             break;
 
     //Se for a imgem que queremos guardamos
-    if(c[0] == 'I')
+    if(strstr(c, ".jpg") != NULL || strstr(c, ".jpeg") != NULL || strstr(c, ".png") != NULL)
     {
-        fscanf(F,"%d %d %d", &lin, &col, &canais);
+        fscanf(F,"%d %d %d", lin, col, &canais);
         L = make_vector(lin);
 
-        for(i = 0 ; i < lin ; i++)
+        for(i = 0 ; i < *lin ; i++)
         {
-            for(j = 0 ; j < col ; j++)
+            for(j = 0 ; j < *col ; j++)
             {
                 fscanf(F, "%d %d %d", &r, &g, &b);
                 L[i] = insert_last(L[i], make_pixel(j, r, g, b));

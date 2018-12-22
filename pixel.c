@@ -1,11 +1,11 @@
 #include "pixel.h"
 
-Pixel* *make_vector(int n)
+Pixel* *make_vector(int TV)
 {
-    Pixel* *L = (Pixel**) malloc(n * sizeof(Pixel*));
+    Pixel* *L = (Pixel**) malloc(TV * sizeof(Pixel*));
 
     int i = 0;
-    for(i = 0 ; i < n ; i++)
+    for(i = 0 ; i < TV ; i++)
         L[i] = NULL;
 
     return L;
@@ -46,13 +46,13 @@ Pixel* insert_last(Pixel *L, Pixel *new_pixel)
     return L;
 }
 
-void free_image(Pixel* *L)
+void free_image(Pixel* *L, int TV)
 {
     if(L == NULL)
         return;
 
     int i = 0;
-    for(i = 1079 ; i >= 0 ; i--)
+    for(i = TV - 1 ; i >= 0 ; i--)
         free_list(L[i]);
 
     free(L);

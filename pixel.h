@@ -16,11 +16,11 @@ typedef struct PIXEL
 /*
  * Função make_vector(int n)
  * ----------------------------
- *   n: nº de elementos que o vetor tera
+ *   TV: nº de elementos que o vetor tera
  *
  *   retorno: vetor com n elementos
  */
-Pixel* *make_vector(int n);
+Pixel* *make_vector(int TV);
 
 /*
  * Função make_pixel(int column, int r, int g, int b)
@@ -49,8 +49,9 @@ Pixel* insert_last(Pixel *L, Pixel *new_pixel);
  * Função free_list(Pixel *L)
  * ----------------------------
  *   L: Lista para libertar
+ *   TV: tamanho do vetor
  */
-void free_image(Pixel* *L);
+void free_image(Pixel* *L, int TV);
 
 /*
  * Função free_list(Pixel *L)

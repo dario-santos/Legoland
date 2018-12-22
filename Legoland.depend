@@ -33,49 +33,49 @@
 	<stdio.h>
 	"pixel.h"
 
-1545493859 source:c:\users\dario\onedrive\documentos\github\legoland\ler.c
+1545506608 source:c:\users\dario\onedrive\documentos\github\legoland\ler.c
 	"ler.h"
 
-1545487881 c:\users\dario\onedrive\documentos\github\legoland\ler.h
+1545506155 c:\users\dario\onedrive\documentos\github\legoland\ler.h
 	<stdlib.h>
 	<stdio.h>
+	<string.h>
 	"pixel.h"
 
-1545142086 c:\users\dario\onedrive\documentos\github\legoland\pixel.h
+1545506914 c:\users\dario\onedrive\documentos\github\legoland\pixel.h
 	<stdlib.h>
 
-1545494106 source:c:\users\dario\onedrive\documentos\github\legoland\pesquisar.c
+1545506745 source:c:\users\dario\onedrive\documentos\github\legoland\pesquisar.c
 	"pesquisa.h"
 
-1545492798 c:\users\dario\onedrive\documentos\github\legoland\pesquisa.h
+1545506344 c:\users\dario\onedrive\documentos\github\legoland\pesquisa.h
 	<stdio.h>
 	<stdlib.h>
-	<math.h>
 	"pixel.h"
 	"zone.h"
 
-1545493142 source:c:\users\dario\onedrive\documentos\github\legoland\pixel.c
+1545506874 source:c:\users\dario\onedrive\documentos\github\legoland\pixel.c
 	"pixel.h"
 
-1545493380 source:c:\users\dario\onedrive\documentos\github\legoland\source.c
+1545495195 source:c:\users\dario\onedrive\documentos\github\legoland\source.c
 	<stdio.h>
 	"menu.h"
 
-1545493656 source:c:\users\dario\onedrive\documentos\github\legoland\menu.c
+1545507127 source:c:\users\dario\onedrive\documentos\github\legoland\menu.c
 	"menu.h"
 
-1545493239 c:\users\dario\onedrive\documentos\github\legoland\menu.h
+1545495437 c:\users\dario\onedrive\documentos\github\legoland\menu.h
 	<stdlib.h>
 	<stdio.h>
+	"pixel.h"
 	"zone.h"
-	"pixel.h"
-	"pesquisa.h"
 	"ler.h"
+	"pesquisa.h"
 
-1545494760 c:\users\dario\onedrive\documentos\github\legoland\zone.h
+1545494870 c:\users\dario\onedrive\documentos\github\legoland\zone.h
 	<stdlib.h>
 	<stdio.h>
 
-1545092317 source:c:\users\dario\onedrive\documentos\github\legoland\zone.c
+1545494836 source:c:\users\dario\onedrive\documentos\github\legoland\zone.c
 	"zone.h"
 

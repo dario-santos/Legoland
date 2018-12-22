@@ -11,6 +11,8 @@
  * Função search_zones(Pixek* *L, int r, int g, int b, int d)
  * ----------------------------
  *   L: vetor de listas com a imagem em que vamos procurar
+ *   lin: numero de pixeis por linhas da imagem
+ *   col: numero de pixeis por coluna da imagem
  *   r: codigo do vermelho a procurar
  *   g: codigo do verde a procurar
  *   b: codigo do azul a procurar
@@ -18,7 +20,7 @@
  *
  *   retorno: Lista com as zonas por ordem decrescente
  */
-Zone* search_zones(Pixel* *L, int r, int g, int b, int d);
+Zone* search_zones(Pixel* *L, int lin, int col, int r, int g, int b, int d);
 
 /*
  * Função in_interval(Pixel *pixel)

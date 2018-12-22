@@ -37,15 +37,16 @@ void search_menu()
     Zone* Z = NULL;
     Pixel* *L = NULL;
     int r = 0, g = 0, b = 0, d = 0;
+    int lin = 0, col = 0;
     int i = 1;
 
     search_input(&r, &g, &b, &d);
 
-    F = open_file("imgs.txt");
+    F = open_file("teste.txt");
 
     do{
-        L = read_file(F);
-        Z = search_zones(L, r, g, b, d);
+        L = read_file(F, &lin, &col);
+        Z = search_zones(L, lin, col, r, g, b, d);
 
         if(Z != NULL)
         {
@@ -55,7 +56,7 @@ void search_menu()
         }
 
         if(L != NULL)
-            free_image(L);
+            free_image(L, lin);
 
         i++;
     }while(L != NULL);

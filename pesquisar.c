@@ -1,8 +1,6 @@
 #include "pesquisa.h"
 
-//para o menu.h?
 int R = 0, G = 0, B = 0, D = 0;
-//para o pesquisa.h?
 int X_MAX = 0, X_MIN = 0, Y_MAX = 0, Y_MIN = 0;
 
 Zone* search_zones(Pixel* *L, int r, int g, int b, int d)
@@ -19,28 +17,25 @@ Zone* search_zones(Pixel* *L, int r, int g, int b, int d)
     int sz = 0;
 
     if(L == NULL)
-    {
-        printf("A imagem esta nula");
         return NULL;
-    }
 
-    int* *vistidados = (int**) malloc(1080 * sizeof(int*));
+    int* *visitados = (int**) malloc(1080 * sizeof(int*));
     for(int i = 0 ; i < 1080 ; i++)
-        vistidados[i] = (int*) calloc(1920, sizeof(int));
+        visitados[i] = (int*) calloc(1920, sizeof(int));
 
     for(i = 0 ; i < 1080 ; i++)
     {
         aux = L[i];
         for(j = 0 ; j < 1920 ; j++)
         {
-            if(in_interval(aux) && vistidados[i][j] == 0)
+            if(in_interval(aux) && visitados[i][j] == 0)
             {
                 Y_MAX = i;
                 Y_MIN = i;
                 X_MAX = j;
                 X_MIN = j;
 
-                sz = recursive_search(L, i, j, vistidados);
+                sz = recursive_search(L, i, j, visitados);
 
                 //Como a imagem começa a [0][0] temos que aumentar uma unidade
                 ++X_MAX;
@@ -48,14 +43,19 @@ Zone* search_zones(Pixel* *L, int r, int g, int b, int d)
                 ++Y_MAX;
                 ++Y_MIN;
 
-                c1 = abs((X_MAX + X_MIN)/2);
-                r1 = abs((Y_MAX + Y_MIN)/2);
+                c1 = (X_MAX + X_MIN)/2;
+                r1 = (Y_MAX + Y_MIN)/2;
 
                 Z = insert_order(Z, make_zone(c1, r1, sz));
             }
             aux = aux->pnext;
         }
     }
+
+    for(int i = 0 ; i < 1080 ; i++)
+        free(visitados[i]);
+    free(visitados);
+
     return Z;
 }
 
@@ -103,6 +103,7 @@ int recursive_search(Pixel* *L, int i, int j, int** V)
         recursive_search(L, i + 1, j, V) +
         recursive_search(L, i, j - 1, V);
 }
+
 int in_limits(int i, int j)
 {
     if(!(i >= 0 && i < 1080))
@@ -126,4 +127,3 @@ Pixel* get_pixel(Pixel* *L, int i, int j)
 
     return NULL;
 }
-

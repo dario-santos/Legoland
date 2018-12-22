@@ -17,8 +17,8 @@ typedef struct ZONE
 /*
  * Função make_zone(int c, int r, int sz)
  * ----------------------------
- *   c: centro do eixo x
- *   r: centro do eixo y
+ *   c: ponto no eixo x
+ *   r: ponto no eixo y
  *   sz(size): tamanho da zona (nº de pixeis)
  *
  *   retorno: elemento do tipo Zone com os dados passados
@@ -26,14 +26,14 @@ typedef struct ZONE
 Zone* make_zone(int c, int r, int sz);
 
 /*
- * Função insert_zone_first(Zone *Z, Zone *new_zone)
+ * Função insert_order(Zone *Z, Zone *new_zone)
  * ----------------------------
  *   Z: Lista de zonas
  *   new_zone: elemento do tipo Zone
  *
- *   retorno: Lista com o elemento introduzido na primeira posicao
+ *   retorno: Lista com o elemento introduzido na posicao correta
  */
-Zone* insert_zone_first(Zone *Z, Zone *new_zone);
+Zone* insert_order(Zone *Z, Zone *new_zone);
 
 /*
  * Função insert_zone_last(Zone *Z, Zone *new_zone)
@@ -46,14 +46,14 @@ Zone* insert_zone_first(Zone *Z, Zone *new_zone);
 Zone* insert_zone_last(Zone *Z, Zone *new_zone);
 
 /*
- * Função insert_order(Zone *Z, Zone *new_zone)
+ * Função insert_zone_first(Zone *Z, Zone *new_zone)
  * ----------------------------
  *   Z: Lista de zonas
  *   new_zone: elemento do tipo Zone
  *
- *   retorno: Lista com o elemento introduzido na posicao correta
+ *   retorno: Lista com o elemento introduzido na primeira posicao
  */
-Zone* insert_order(Zone *Z, Zone *new_zone);
+Zone* insert_zone_first(Zone *Z, Zone *new_zone);
 
 /*
  * Função print_zones(Zone *Z)

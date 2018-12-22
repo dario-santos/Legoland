@@ -16,7 +16,7 @@ typedef struct PIXEL
 /*
  * Função make_vector(int n)
  * ----------------------------
- *   n: nº de elementos do vetor
+ *   n: nº de elementos que o vetor tera
  *
  *   retorno: vetor com n elementos
  */
@@ -40,9 +40,17 @@ Pixel* make_pixel(int column, int r, int g, int b);
  *   L: Lista a introduzir o pixel
  *   new_pixel: pixel para introduzir na lista
  *
- *   retorno: lista com o pixel adicionado
+ *   retorno: lista com o pixel adicionado na ultima posicao
  */
 Pixel* insert_last(Pixel *L, Pixel *new_pixel);
+
+
+/*
+ * Função free_list(Pixel *L)
+ * ----------------------------
+ *   L: Lista para libertar
+ */
+void free_image(Pixel* *L);
 
 /*
  * Função free_list(Pixel *L)

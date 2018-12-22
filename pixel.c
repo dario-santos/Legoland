@@ -14,7 +14,9 @@ Pixel* *make_vector(int n)
 Pixel* make_pixel(int column, int r, int g, int b)
 {
     Pixel *aux = (Pixel*) malloc(sizeof(Pixel));
+
     aux->column = column;
+
     aux->r = r;
     aux->g = g;
     aux->b = b;
@@ -44,6 +46,18 @@ Pixel* insert_last(Pixel *L, Pixel *new_pixel)
     return L;
 }
 
+void free_image(Pixel* *L)
+{
+    if(L == NULL)
+        return;
+
+    int i = 0;
+    for(i = 1079 ; i >= 0 ; i--)
+        free_list(L[i]);
+
+    free(L);
+}
+
 void free_list(Pixel *L)
 {
     if(L == NULL)
@@ -53,6 +67,7 @@ void free_list(Pixel *L)
     {
         if(L->pprev != NULL)
             free(L->pprev);
+
         if(L->pnext == NULL)
         {
             free(L);

@@ -4,8 +4,8 @@ Zone* make_zone(int c, int r, int sz)
 {
     Zone *aux = (Zone*) malloc(sizeof(Zone));
 
-    aux->r = r;
     aux->c = c;
+    aux->r = r;
 
     aux->sz = sz;
 
@@ -13,36 +13,6 @@ Zone* make_zone(int c, int r, int sz)
     aux->pprev = NULL;
 
     return aux;
-}
-
-Zone* insert_zone_first(Zone *Z, Zone *new_zone)
-{
-    if(Z == NULL)
-        return new_zone;
-
-    new_zone->pnext = Z;
-    Z->pprev = new_zone;
-
-    return new_zone;
-}
-
-Zone* insert_zone_last(Zone *Z, Zone *new_zone)
-{
-    Zone *aux = Z;
-    if(Z == NULL)
-        return new_zone;
-
-    while(aux != NULL)
-    {
-        if(aux->pnext == NULL)
-        {
-            aux->pnext = new_zone;
-            new_zone->pprev = aux;
-            break;
-        }
-        aux = aux->pnext;
-    }
-    return Z;
 }
 
 Zone* insert_order(Zone *Z, Zone *new_zone)
@@ -70,6 +40,36 @@ Zone* insert_order(Zone *Z, Zone *new_zone)
     aux->pprev = new_zone;
 
     return Z;
+}
+
+Zone* insert_zone_last(Zone *Z, Zone *new_zone)
+{
+    Zone *aux = Z;
+    if(Z == NULL)
+        return new_zone;
+
+    while(aux != NULL)
+    {
+        if(aux->pnext == NULL)
+        {
+            aux->pnext = new_zone;
+            new_zone->pprev = aux;
+            break;
+        }
+        aux = aux->pnext;
+    }
+    return Z;
+}
+
+Zone* insert_zone_first(Zone *Z, Zone *new_zone)
+{
+    if(Z == NULL)
+        return new_zone;
+
+    new_zone->pnext = Z;
+    Z->pprev = new_zone;
+
+    return new_zone;
 }
 
 void print_zones(Zone *Z)

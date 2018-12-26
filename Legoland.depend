@@ -42,7 +42,7 @@
 	<string.h>
 	"pixel.h"
 
-1545506914 c:\users\dario\onedrive\documentos\github\legoland\pixel.h
+1545842085 c:\users\dario\onedrive\documentos\github\legoland\pixel.h
 	<stdlib.h>
 
 1545506745 source:c:\users\dario\onedrive\documentos\github\legoland\pesquisar.c
@@ -57,11 +57,11 @@
 1545506874 source:c:\users\dario\onedrive\documentos\github\legoland\pixel.c
 	"pixel.h"
 
-1545495195 source:c:\users\dario\onedrive\documentos\github\legoland\source.c
+1545508035 source:c:\users\dario\onedrive\documentos\github\legoland\source.c
 	<stdio.h>
 	"menu.h"
 
-1545507127 source:c:\users\dario\onedrive\documentos\github\legoland\menu.c
+1545508296 source:c:\users\dario\onedrive\documentos\github\legoland\menu.c
 	"menu.h"
 
 1545495437 c:\users\dario\onedrive\documentos\github\legoland\menu.h
@@ -76,6 +76,6 @@
 	<stdlib.h>
 	<stdio.h>
 
-1545507822 source:c:\users\dario\onedrive\documentos\github\legoland\zone.c
+1545507938 source:c:\users\dario\onedrive\documentos\github\legoland\zone.c
 	"zone.h"
 

@@ -40,7 +40,7 @@ Pixel** read_file(FILE* F, int *lin, int *col)
     if(strstr(c, ".jpg") != NULL || strstr(c, ".jpeg") != NULL || strstr(c, ".png") != NULL)
     {
         fscanf(F,"%d %d %d", lin, col, &canais);
-        L = make_vector(lin);
+        L = make_vector(*lin);
 
         for(i = 0 ; i < *lin ; i++)
         {

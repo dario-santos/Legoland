@@ -28,6 +28,8 @@ int show_menu();
  */
 void search_menu();
 
+
+void filename_input(char *path);
 /*
  * Função search_input(int *r, int *g, int *b, int *d)
  * ----------------------------

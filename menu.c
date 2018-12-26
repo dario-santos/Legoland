@@ -40,9 +40,12 @@ void search_menu()
     int lin = 0, col = 0;
     int i = 1;
 
+    char path[50] = "";
+    filename_input(path);
+
     search_input(&r, &g, &b, &d);
 
-    F = open_file("imgs.txt");
+    F = open_file(path);
 
     do{
         L = read_file(F, &lin, &col);
@@ -63,6 +66,15 @@ void search_menu()
     close_file(F);
 }
 
+void filename_input(char *path)
+{
+    char *dot = "";
+    printf("Insira o nome do ficheiro a carregar\n");
+    do{
+        scanf("%s", path);
+        dot = strrchr(path, '.');
+    }while(!(dot && !strcmp(dot, ".txt")));
+}
 void search_input(int *r, int *g, int *b, int *d)
 {
     printf("Vai inserir a cor a procurar no formato RGB agora\n");

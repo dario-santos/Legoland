@@ -1,2 +1,2 @@
 # Legoland
-Finding Blobs in Legoland - Projeto de Estruturas e Algoritmos (Estruturas e Algoritmos de Dados)
+Este programa foi desenvolvido no ano letivo 2018/2019 para a Unidade Curricular Estruturas de Dados.
